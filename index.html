@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ayush Maurya!</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(ellipse at center,
+                #21183e 0%,
+                #151126 45%,
+                #0b0a16 100%);
+            color: white;
+        }
+
+        /* Main Card */
+        .birthday-card {
+            width: 100%;
+            max-width: 360px;
+            padding: 36px 28px 30px;
+            text-align: center;
+            background: linear-gradient(
+                145deg,
+                rgba(54, 48, 100, 0.96),
+                rgba(27, 23, 60, 0.98)
+            );
+            border: 1px solid rgba(171, 146, 255, 0.12);
+            border-radius: 25px;
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.25),
+                inset 0 1px 1px rgba(255, 255, 255, 0.07);
+            animation: appear 0.8s ease-out;
+        }
+
+        /* Heading */
+        .birthday-card h1 {
+            font-size: clamp(24px, 4vw, 30px);
+            line-height: 1.18;
+            font-weight: 800;
+            letter-spacing: -0.6px;
+            margin-bottom: 14px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.08);
+        }
+
+        /* Gift Icon */
+        .gift {
+            font-size: 48px;
+            margin: 8px 0 26px;
+            display: inline-block;
+            cursor: pointer;
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        /* Button */
+        .open-btn {
+            width: 100%;
+            min-height: 52px;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(
+                100deg,
+                #f044d5,
+                #bd42ff
+            );
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow:
+                0 0 0 7px rgba(222, 58, 239, 0.12),
+                0 0 24px rgba(219, 56, 255, 0.25);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .open-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 0 0 8px rgba(222, 58, 239, 0.16),
+                0 0 32px rgba(219, 56, 255, 0.45);
+        }
+
+        .open-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Hidden Birthday Surprise */
+        .surprise {
+            display: none;
+            margin-top: 28px;
+            animation: appear 0.7s ease;
+        }
+
+        .surprise.show {
+            display: block;
+        }
+
+        .surprise h2 {
+            font-size: clamp(24px, 5vw, 32px);
+            color: #ff80ed;
+            margin-bottom: 12px;
+        }
+
+        .surprise p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #e8e2ff;
+        }
+
+        .surprise .open-btn a{ text-decoration: none; 
+                               color: #ffff;}
+
+        .cake {
+            font-size: 60px;
+            margin: 15px 0;
+        }
+
+        /* Floating Celebration */
+        .confetti {
+            position: fixed;
+            top: -30px;
+            pointer-events: none;
+            z-index: 5;
+            animation: fall 3.5s linear forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes giftBounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-7px) rotate(4deg);
+            }
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(600deg);
+                opacity: 0;
+            }
+        }
+
+        /* Tablets */
+        @media (min-width: 600px) {
+            .birthday-card {
+                max-width: 390px;
+                padding: 40px 34px 32px;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 480px) {
+            body {
+                padding: 18px;
+            }
+
+            .birthday-card {
+                max-width: 340px;
+                padding: 30px 24px 27px;
+                border-radius: 23px;
+            }
+
+            .birthday-card h1 {
+                font-size: 25px;
+            }
+
+            .gift {
+                font-size: 44px;
+                margin-bottom: 24px;
+            }
+
+            .open-btn {
+                min-height: 49px;
+                font-size: 15px;
+            }
+        }
+
+        /* Very Small Phones */
+        @media (max-width: 320px) {
+            .birthday-card {
+                padding: 25px 18px;
+            }
+
+            .birthday-card h1 {
+                font-size: 22px;
+            }
+
+            .gift {
+                font-size: 40px;
+            }
+        }
+
+        /* Reduced motion accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="birthday-card">
+
+        <div id="initialContent">
+            <h1>
+                A Special Surprise<br>
+                For You From<br>
+                Ayush!
+            </h1>
+
+            <div class="gift" aria-hidden="true">🎁</div>
+
+            <button class="open-btn" id="openBtn" type="button">
+                Tap to Open
+            </button>
+        </div>
+
+        <section class="surprise" id="surprise" aria-live="polite">
+            <div class="cake">🎂</div>
+
+            <h2>Happy Birthday!</h2>
+
+            <p>
+                Wishing you a day full of happiness,
+                love, laughter and beautiful memories.
+                May all your dreams come true!
+            </p>
+
+            <div class="cake">🎉💖🎈</div>
+            <button class="open-btn" id="openBtn" type="button">
+                <a href="celibrate.html">Tap to Surprise</a>
+            </button>
+        </section>
+
+    </main>
+
+    <script>
+        const openBtn = document.getElementById("openBtn");
+        const initialContent = document.getElementById("initialContent");
+        const surprise = document.getElementById("surprise");
+
+        openBtn.addEventListener("click", function () {
+            initialContent.style.display = "none";
+            surprise.classList.add("show");
+
+            // Celebration animation
+            const emojis = ["🎉", "✨", "💖", "🎈", "⭐", "🎊"];
+
+            for (let i = 0; i < 35; i++) {
+                const confetti = document.createElement("span");
+
+                confetti.className = "confetti";
+                confetti.textContent =
+                    emojis[Math.floor(Math.random() * emojis.length)];
+
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.fontSize =
+                    (16 + Math.random() * 18) + "px";
+
+                confetti.style.animationDuration =
+                    (2.5 + Math.random() * 2) + "s";
+
+                document.body.appendChild(confetti);
+
+                confetti.addEventListener("animationend", function () {
+                    confetti.remove();
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

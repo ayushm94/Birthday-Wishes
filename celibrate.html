@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ayush Maurya!</title>
+    <!-- Importing Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #1b1b2f 0%, #0f0f1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Particles/Stars */
+        .stars {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: transparent;
+        }
+
+        /* Main Glassmorphism Container */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 30px;
+            padding: 50px 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 1000px; /* Laptop View Max Width */
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUpFade 1.5s ease-out forwards;
+        }
+
+        /* Glowing Profile Image */
+        .profile-wrapper {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 30px auto;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(45deg, #ffdf00, #d4af37, #ffdf00);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #0f0f1a;
+        }
+
+        /* Typography */
+        .greeting {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem;
+            color: #ffdf00;
+            margin-bottom: -10px;
+            text-shadow: 2px 2px 10px rgba(255, 223, 0, 0.4);
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(to right, #ffffff, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        /* Action Button */
+        .wish-btn {
+            background: linear-gradient(45deg, #d4af37, #ffdf00);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .wish-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .wish-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Confetti Canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Animations */
+        @keyframes slideUpFade {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+            100% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.8); }
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (Media Queries)
+           ========================================= */
+           
+        /* Tablet View (Max 900px) */
+        @media screen and (max-width: 900px) {
+            .card-container {
+                width: 85%;
+                padding: 40px 30px;
+            }
+            .greeting { font-size: 4rem; }
+            .name { font-size: 2.8rem; }
+            .message { font-size: 1.05rem; }
+            .profile-wrapper { width: 200px; height: 200px; }
+        }
+
+        /* Mobile View (Max 480px) */
+        @media screen and (max-width: 480px) {
+            .card-container {
+                width: 92%;
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            .profile-wrapper { 
+                width: 160px; 
+                height: 160px; 
+                margin-bottom: 20px;
+            }
+            .greeting { 
+                font-size: 3rem; 
+                margin-bottom: 0; 
+            }
+            .name { 
+                font-size: 2rem; 
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+            .message { 
+                font-size: 0.95rem; 
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+            .wish-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Confetti layer -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="card-container">
+        <!-- Profile Image -->
+        <div class="profile-wrapper">
+            <!-- Ensure 93180.jpg is in the same folder as this HTML file -->
+            <img src="Ayush.jpg" alt="Ayush Maurya" class="profile-img">
+        </div>
+
+        <!-- Birthday Texts -->
+        <h2 class="greeting">Happy Birthday</h2>
+        <h1 class="name">Ayush Maurya</h1>
+        
+        <p class="message">
+            Janamdin ki bohot bohot shubhkamnayein Ayush! Bhagwan kare tumhara aane wala har ek din nayi kamyabi, khushi aur behtar swasthya lekar aaye. Hamesha aise hi muskurate raho aur apni life me aage badhte raho. Have a wonderful year ahead! 🎉🎂
+        </p>
+
+        <!-- Trigger Button -->
+        <button class="wish-btn" onclick="fireConfetti()">Celebrate Now! 🎇</button>
+    </div>
+
+    <script>
+        // Confetti Logic for "Celebrate Now" button
+        function fireConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#ffdf00', '#d4af37', '#ffffff', '#ff6b6b', '#4ecdc4'];
+
+            // Create particles
+            for (let i = 0; i < 200; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2 + 100,
+                    r: Math.random() * 6 + 2,
+                    dx: Math.random() * 20 - 10,
+                    dy: Math.random() * -20 - 10,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.floor(Math.random() * 10) - 10,
+                    tiltAngleInc: (Math.random() * 0.07) + 0.05,
+                    tiltAngle: 0,
+                    gravity: 0.5
+                });
+            }
+
+            // Animate particles
+            function render() {
+                requestAnimationFrame(render);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach((p, index) => {
+                    p.tiltAngle += p.tiltAngleInc;
+                    p.dy += p.gravity;
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    p.tilt = Math.sin(p.tiltAngle) * 15;
+
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt + p.r, p.y);
+                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r);
+                    ctx.stroke();
+
+                    // Remove particle if it goes out of screen
+                    if (p.y > canvas.height) {
+                        particles.splice(index, 1);
+                    }
+                });
+            }
+            render();
+        }
+
+        // Handle Resize properly for canvas
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
